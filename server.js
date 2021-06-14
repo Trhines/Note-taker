@@ -23,7 +23,7 @@ const pushNewFile = (data, newNote) => {
     if(newNote){newData = [...data, newNote]}
     else{newData = data}
     for(let i=0; i<newData.length; i++){
-        newData[i].id = i
+        newData[i].id = (i+1)
     }
 
     fs.writeFile('db/db.json', JSON.stringify(newData), (err)=>{
